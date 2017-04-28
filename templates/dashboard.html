@@ -1,0 +1,60 @@
+{%extends "header.html" %}
+
+{% block body %}
+<div class="container" align="center">
+<div role="tabpanel">
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#MoonTravel" aria-controls="Moon Travel" role="tab" data-toggle="tab">MoonTravel</a></li>
+  </ul>
+  <!-- Tab panes -->
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane fade in active" id="Origen">
+
+
+
+<form class="form-inline" method="POST" action="{{ url_for('viaje') }}">
+  <div class="form-group">
+    <div class="input-group">
+        <span class="input-group-addon">Please select</span>
+
+            <select name="origen_select" class="selectpicker form-control">
+              {% for o in data["Origen"] %}
+              <option value="{{ o.name }}">{{ o.name }}</option>
+              {% endfor %}
+            </select>
+
+
+        <select name="destino_select" class="selectpicker form-control">
+              {% for o in data["Origen"] %}
+              <option value="{{ o.name }}">{{ o.name }}</option>
+              {% endfor %}
+            </select>
+
+        <select name="transporte_select" class="selectpicker form-control">
+              {% for o in data["Transporte"] %}
+              <option value="{{ o.name }}">{{ o.name }}</option>
+              {% endfor %}
+            </select>
+
+
+    </div>
+    <button type="submit" class="btn btn-default">Go</button>
+  </div>
+</form>
+
+
+
+
+
+
+
+</div>
+	{% if error %}
+			<p class="error"><strong>Error:</strong> {{ error }}</p>
+	{% endif %}
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "header.html" %}
+{% block body %}
+	<body>
+	  
+		<div class="container">
+			<br>
+			<h3>Register:</h3>
+			<br>
+			<form action="" class="form-inline" method="POST">
+			<dl>
+				<dt><h4 for="Username">Username</h4>
+				<dd><input type="text" class="form-control" placeholder="Username" 
+				name="username" value="{{request.form.username}}"></dd>
+				
+				<dt><h4 for="email">Email Address</h4>
+				<dd><input id="email" placeholder="Email" class="form-control" name="email" 
+				type="text" value="{{request.form.email}}"></dd>	
+	
+				<dt><h4 for="password">New password</h4>
+				<dd><input type="password" class="form-control" placeholder="Password" 
+				name="password" value="{{request.form.password}}"></dd>
+	
+				<dt><h4 for="confirm">Repeat password</h4>
+				<dd><input type="password" class="form-control" placeholder="Confirm" 
+				name="confirm" value="{{request.form.confirm}}"></dd>
+
+			</dl>
+			<p><input type="submit" value="Register">
+			</form> 
+		{% if error %}
+			<p class="error"><strong>Error:</strong> {{ error }}</p>
+		{% endif %}
+
+		</div>
+
+	</body>
+{% endblock %}

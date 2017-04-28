@@ -1,0 +1,66 @@
+{% extends "header.html" %}
+{% block body %}
+
+<body class="body">
+
+      <div class="container" align="center">
+	  <img src="{{ url_for('static', filename='images/Rutas.png') }}">
+	  
+	  </div>
+	  <div class="container" align="left">
+		
+		<h4>La mejor ruta utilizando el medio de transporte avión es la siguiente: </h4>
+		<br>
+		<p>*En el mapa puede ubicar las respectivas paradas*</p>
+		<br>
+		<center>{{ mejor_ruta }}</center>
+		
+		<h4> La distancia en kilómetros es: </h4>
+		<br>
+		<center>{{ peso }}km</center>
+		<br>
+		
+		<h4>Seleccione la aerolínea: </h4>
+		
+		<div class="list-group"><center>
+		<button type="button" class="list-group-item">Taca</button>
+		<button type="button" class="list-group-item">Intercontinental</button>
+		<button type="button" class="list-group-item">CR Airlines</button>
+		</center></div>
+		
+		<h4>Seleccione la fecha en que desea viajar: </h4>
+		
+		<div class="container">
+			<div class="row">
+				<div class='col-sm-6'>
+					<div class="form-group">
+						<div class='input-group date' id='datetimepicker1'>
+							<input type='text' class="form-control" />
+							<span class="input-group-addon">
+							<span class="glyphicon glyphicon-calendar"></span>
+							</span>
+						</div>
+					</div>
+				</div>
+			<script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+			</script>
+			</div>
+		</div>
+		
+		<h4> Su tarifa total es: </h4>
+		<br>
+		<center>{{ precio }}</center>
+		<br>
+		
+        <center> <a href= " /confirmarViaje/"><button type= "button" class= "btn btn-primary" aria-label= "Left Align"
+			style= "margin-top: 5px; margin-bottom: 5px; height: 44px; margin-right: 15px">
+			<span class="glyphicon glyphicon glyphicon-check" aria-hidden="true"></span> Confirmar viaje!
+		</button></a>
+		</center>
+      </div>
+	  	
+</body>
+{% endblock %}

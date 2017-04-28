@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>CoolPanda Travels</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='CoolPandaIcon.ico') }}">
+	
+</head>
+
+<header>
+	<div class="navbar-header">
+      <a class="navbar-brand" href="/">
+	  <img style="max-width:120px; margin-top: -7px;" 
+	  src="{{ url_for('static', filename='images/CoolPanda.png') }}">
+	  </a>
+    </div>
+	
+	<div class = "container-fluid">
+	
+	<ul class="nav navbar-nav navbar-right">
+	 
+	<div style= "margin-right: 10px; margin-left: 15 px; margin-top: 5px; margin-bottom: 5px;" class= "container-fluid">
+	
+		<h5>
+		<a href= "/dashboard/"><span class= "glyphicon glyphicon-plane"></span> Star to travel&nbsp;&nbsp;&nbsp;</a>
+		<a href= "/login/"> <span class="glyphicon glyphicon-log-in"></span>
+		Login&nbsp;&nbsp;&nbsp;</a>
+		
+		
+		
+	<a href="/register/" > <span class="glyphicon glyphicon-pencil"></span> Sign up </a><h5>
+
+	
+	</div>
+	</ul>	
+    </ul>
+	
+	</div>
+	
+</header>
+
+<body>
+	
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+	<div class="container" align="center" style="height:80%">
+	
+		<a href="/dashboard/">
+			<video autoplay="autoplay" poster="{{ url_for('static', filename='videos/Parques.png') }}" style="width:100%; max-height:80%" >
+			<source src="{{ url_for('static', filename='videos/Costa_Rica.mp4') }}" type="video/mp4">
+			</video>
+		</a>
+	</div>
+	
+</body>
+
+</html>
